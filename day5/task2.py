@@ -1,11 +1,7 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Apr 29 09:51:11 2022
+import os
 
-@author: agfrxa
-"""
 seat_id_list = []
-with open(r'C:\Users\agfrxa\Python\advent of code 2020\day5\input.txt') as f:
+with open(os.path.join(os.getcwd(), 'input.txt')) as f:
     boarding_passes = f.readlines()
 
     for boarding_pass in boarding_passes:
@@ -29,5 +25,4 @@ with open(r'C:\Users\agfrxa\Python\advent of code 2020\day5\input.txt') as f:
 seat_id_list.sort()
 for i in range(len(seat_id_list)-1):
     if seat_id_list[i] != seat_id_list[i+1] - 1:
-        print(seat_id_list[i], seat_id_list[i+1])
-
+        print((seat_id_list[i] + seat_id_list[i+1])/2)

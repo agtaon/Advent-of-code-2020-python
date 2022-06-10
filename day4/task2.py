@@ -1,14 +1,8 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Apr 28 13:45:04 2022
-
-@author: agfrxa
-"""
-
 import re
+import os
 valid_passports = 0
 passport_no = 0
-with open(r'C:\Users\agfrxa\Python\advent of code 2020\day 4\input.txt') as f:
+with open(os.path.join(os.getcwd(), 'input.txt')) as f:
     lines = f.readlines()
     new_lines = [rmv_newline.replace('\n','') for rmv_newline in lines]
 
@@ -67,7 +61,6 @@ with open(r'C:\Users\agfrxa\Python\advent of code 2020\day 4\input.txt') as f:
 
         if met_requirements == 7:
             valid_passports += 1
-            print(passport_no)
 
 print(valid_passports)
 

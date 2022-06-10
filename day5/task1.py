@@ -1,13 +1,7 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Apr 29 08:29:49 2022
-
-@author: agfrxa
-"""
-
+import os
 
 maximum_prod = 0
-with open(r'C:\Users\agfrxa\Python\advent of code 2020\day5\input.txt') as f:
+with open(os.path.join(os.getcwd(), 'input.txt')) as f:
     boarding_passes = f.readlines()
 
     for boarding_pass in boarding_passes:
@@ -28,6 +22,5 @@ with open(r'C:\Users\agfrxa\Python\advent of code 2020\day5\input.txt') as f:
 
         if seat_range[0] * 8 + col_range[0] > maximum_prod:
             maximum_prod = seat_range[0] * 8 + col_range[0]
-            print(maximum_prod)
 
 print(maximum_prod)
