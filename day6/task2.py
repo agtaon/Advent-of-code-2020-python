@@ -1,11 +1,16 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Jun 10 13:53:51 2022
-
-@author: agfrxa
-"""
 import os
-import sys
+
+def which_chars_in_all_strs(list_of_strings):
+    chars = ''
+    for char in list_of_strings[0]:
+        verdict = True
+        for string in list_of_strings[1:]:
+            if char not in string:
+                verdict = False
+        if verdict:
+            chars += char
+
+    return chars
 
 answers = []
 total_answered_questions = 0
@@ -14,10 +19,9 @@ with open(os.path.join(os.getcwd(), 'input.txt')) as f:
     for answer in group_answer:
         answers += [answer.rstrip()]
         if answer.rstrip() == '':
-            total_answered_questions += len(set(''.join(answers)))
-            print(answers)
+            chars_in_common = which_chars_in_all_strs(answers[:-1])
+            total_answered_questions += len(chars_in_common)
             answers = []
-            break
 print(total_answered_questions)
 
 
