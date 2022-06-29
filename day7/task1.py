@@ -26,7 +26,8 @@ def dict_parser(key):
 
     for value in values:
         response = dict_parser(value)
-        outcome_dict[key] = response
+        if response == "Yes":
+            return response
 
     return "No"
 
@@ -37,7 +38,8 @@ with open(os.path.join(os.getcwd(), "input.txt")) as f:
         line_parser(rule)
 
 for key in bag_dict.keys():
-    dict_parser(key)
+    response = dict_parser(key)
+    outcome_dict[key] = response
 
 counter = 0
 for value in outcome_dict.values():
@@ -45,5 +47,3 @@ for value in outcome_dict.values():
         counter += 1
 
 print(counter)
-# print(outcome_dict, "\n")
-# print(bag_dict, "\n")
