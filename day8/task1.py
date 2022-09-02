@@ -33,4 +33,4 @@ with open(os.path.join(os.getcwd(), "input.txt")) as f:
             current_index += 1
         
     
-    print('iterator: ', iterator, 'current_value: ', current_value, 'current_index: ', current_index)
+    print('current_value: ', current_value)
