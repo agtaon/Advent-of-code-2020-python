@@ -1,3 +1,10 @@
+"""
+This code simply uses if-statements to check which instruction is used and then 
+based on which was found changes the next index or adds/subtracts the value accordingly.
+For every index visited the instruction is replaced by the string 'used' and a 
+while loop is used to loop until it either reaches a 'used' or it has looped for 10000 iterations.
+"""
+
 import os
 
     
